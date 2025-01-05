@@ -8,7 +8,7 @@ const Header = () => {
         <img
           src="/logo.png"
           alt="Logo"
-          className="mt-6 ml-5 h-10 w-auto"
+          className="mt-3 ml-5 h-10 w-auto"
         />
       </div>
 
