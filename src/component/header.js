@@ -2,13 +2,13 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-6 py-4 bg-gray-100 shadow-md">
+    <header className="flex justify-between items-center px-6 py-4">
       {/* 왼쪽 로고 */}
       <div>
         <img
           src="/logo.png"
           alt="Logo"
-          className="mt-3 ml-5 h-10 w-auto"
+          className="mt-5 ml-14 h-8 w-auto"
         />
       </div>
 

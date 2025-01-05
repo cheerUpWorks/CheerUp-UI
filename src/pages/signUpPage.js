@@ -10,7 +10,7 @@ const SignUpPage = () => {
   };
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       {/* 헤더 */}
       <header className="mb-4">
         <Header />

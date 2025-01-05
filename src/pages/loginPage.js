@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../component/header';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleSignUpRedirect = () => {
     navigate('/signup');
+  };
+
+  const handleLogin = () => {
+    // 로그인 처리 로직 추가 (예: 인증 API 호출)
+    // 로그인 성공 시
+    navigate('/mainPage');
   };
 
   return (
@@ -41,6 +50,8 @@ const LoginPage = () => {
             <input
               type="email"
               placeholder="이메일을 입력해주세요."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md bg-blue-100 text-gray-600"
             />
           </div>
@@ -48,10 +59,15 @@ const LoginPage = () => {
             <input
               type="password"
               placeholder="비밀번호를 입력해주세요."
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md bg-blue-100 text-gray-600"
             />
           </div>
-          <button className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+          <button
+            onClick={handleLogin}
+            className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
             로그인
           </button>
         </div>
