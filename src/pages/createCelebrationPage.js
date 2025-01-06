@@ -115,7 +115,7 @@ const CreateCelebrationPage = () => {
             <div className="flex items-center space-x-4">
               <label 
                 htmlFor="imageInput" 
-                className="py-1 px-4 mt-2 bg-gray-300 text-gray-700 font-bold rounded-md cursor-pointer"
+                className="py-1 px-4 mt-2 ml-4 bg-gray-300 text-gray-700 font-bold rounded-md cursor-pointer"
               >
                 사진 등록하기
               </label>
