@@ -5,6 +5,7 @@ import SignUpPage from'./pages/signUpPage';
 import LoginPage from './pages/loginPage';
 import MainPage from './pages/mainPage';
 import CreateCelebrationPage from './pages/createCelebrationPage';
+import ShowCelebratePage from './pages/showCelebratePage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/mainPage" element={<MainPage/>}/> 
         <Route path='/createCelebrationPage' element={<CreateCelebrationPage/>}/>
+        <Route path='/showCelebratePage' element={<ShowCelebratePage/>}/>
       </Routes>
     </Router>
   );

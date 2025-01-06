@@ -39,8 +39,18 @@ const CreateCelebrationPage = () => {
       alert('이름을 반드시 입력해야 합니다!');
       return;
     }
-    console.log('사이트가 생성되었습니다!');
+  
+    // ShowCelebratePage로 이동하며 폼 데이터를 전달
+    navigate('/showCelebratePage', {
+      state: {
+        name,
+        message: message || '생일 축하해요!',
+        additionalMessage,
+        imagePreviews
+      }
+    });
   };
+  
 
   const handleCancel = () => {
     console.log('사이트 생성이 취소되었습니다!');
@@ -161,7 +171,7 @@ const CreateCelebrationPage = () => {
             <button
               onClick={handleSubmit}
               className="py-1 px-4 bg-blue-500 text-white font-bold rounded-md w-60"
-              disabled={!name} // 이름이 없으면 버튼 비활성화
+              
             >
               사이트 제작
             </button>
