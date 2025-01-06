@@ -5,13 +5,12 @@ import Card from '../component/celebrateCard';
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const [celebrations, setCelebrations] = useState([]); // API로부터 받을 데이터 상태
-  const [username, setUsername] = useState(''); // 로그인한 유저의 username 상태
+  const [celebrations, setCelebrations] = useState([]); 
+  const [username, setUsername] = useState(''); 
 
-  // 더미 데이터로 username 설정
+
   useEffect(() => {
     const fetchUsername = () => {
-      // 더미 데이터
       const dummyUsername = '홍길동'; // 예시로 '홍길동'을 사용
       setUsername(dummyUsername); // 더미 데이터를 상태로 저장
     };
@@ -35,21 +34,21 @@ const MainPage = () => {
   }, []);
 
   const handleCreateCelebration = () => {
-    navigate('/createCelebrationPage')
+    navigate('/createCelebrationPage');
   };
 
   return (
     <div className='overflow-x-hidden'>
       <header className="mb-4">
-        <Header />
+        {/* Header 컴포넌트에 username을 prop으로 전달 */}
+        <Header username={username} />
       </header>
 
       {/* 메인 컨텐츠 */}
       <div className="flex flex-col items-start justify-center px-20 py-6 mt-20 w-full ml-6">
         {/* 축하 기록 */}
         <div className="flex items-center mb-6 w-full justify-start">
-          {/* 로그인한 유저의 username을 사용 */}
-          <h2 className="text-xl font-semibold text-left  mr-4">
+          <h2 className="text-xl font-semibold text-left mr-4">
             {`${username}님의 축하기록`}
           </h2>
           <button
@@ -67,7 +66,6 @@ const MainPage = () => {
 
         {/* 카드 리스트 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-1 gap-y-5 w-full">
-          {/* 데이터가 있을 경우 카드를 생성 */}
           {celebrations.map((celebration, index) => (
             <Card
               key={index}

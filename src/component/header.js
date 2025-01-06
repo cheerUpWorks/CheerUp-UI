@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ username }) => {
   return (
     <header className="flex justify-between items-center px-6 py-4">
       {/* 왼쪽 로고 */}
@@ -12,9 +12,19 @@ const Header = () => {
         />
       </div>
 
-      {/* 오른쪽 로그인 버튼 */}
-      <div>
-        <button className="bg-blue-500 text-white px-5 py-1 rounded-md hover:bg-blue-600 transition duration-200">
+      {/* 오른쪽 영역 */}
+      <div className="flex items-center">
+        {/* 로그인 상태 메시지 */}
+        {username && (
+          <span className="text-gray-700 text-sm mr-4">
+            {username} 님 환영해요!
+          </span>
+        )}
+
+        <button className="border border-blue-500 text-black bg-white px-5 py-1 mr-4 rounded-md transition duration-200 w-32">
+          회원가입
+        </button>
+        <button className="bg-blue-500 text-white px-5 py-1 mr-10 rounded-md transition duration-200 w-32">
           로그인
         </button>
       </div>

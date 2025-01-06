@@ -53,33 +53,38 @@ const CreateCelebrationPage = () => {
               type="text"
               value={name}
               onChange={handleNameChange}
-              className="mt-2 ml-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-80"
+              className="mt-2 ml-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96"
               placeholder="축하 대상자의 이름을 입력해주세요"
             />
           </div>
 
           {/* 문구 작성하기 */}
-          <div className="mb-6 flex items-center">
-            <label htmlFor="message" className="block text-lg font-semibold text-left mr-2">문구 작성하기</label>
-            <input
-              id="message"
-              type="text"
-              value={message}
-              onChange={handleMessageChange}
-              className="mt-2 ml-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-80"
-              placeholder="축하 문구를 입력해주세요"
-            />
-          </div>
-          {/* 문구를 작성하지 않으면 텍스트 */}
-          <p className="mt-2 text-sm text-gray-500">
-            문구를 작성하지 않으면 '생일 축하해요!'로 자동 제작됩니다.
+          
+            <div className="mb-6 flex items-center">
+              <label htmlFor="message" className="block text-lg font-semibold text-left mr-2">문구 작성하기</label>
+            
+            <div className=''>
+              <input
+                id="message"
+                type="text"
+                value={message}
+                onChange={handleMessageChange}
+                className="mt-2 ml-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96"
+                placeholder="축하 문구를 입력해주세요"
+              />
+               <p className="ml-80 mt-2 text-sm text-gray-500">
+              문구를 작성하지 않으면 '생일 축하해요!'로 자동 제작됩니다.
           </p>
+            </div>
+          </div>
+
 
           {/* 문구 미리보기 */}
           <div className="mb-6 flex items-center">
-            <h3 className="text-lg font-semibold text-left mr-2">문구 미리보기</h3>
-            <p className="mt-2 p-4  rounded-md w-full">{previewMessage}</p>
+            <h3 className="text-lg font-semibold text-left mr-2 whitespace-nowrap">문구 미리보기</h3>
+            <p className="mt-2 ml-8 p-4 rounded-md w-full">{previewMessage}</p>
           </div>
+
 
           {/* 사진 등록하기 */}
           <div className="mb-6 flex items-center">
@@ -88,27 +93,29 @@ const CreateCelebrationPage = () => {
               id="image"
               type="file"
               onChange={handleImageChange}
-              className="mt-2 p-2 w-80 bg-sky-100 text-gray-700 border border-gray-300 rounded-md"
+              className="mt-2 ml-10 p-2 w-80 bg-sky-100 text-gray-700 border border-gray-300 rounded-md"
             />
           </div>
 
           {/* 사이트 제작 및 취소 버튼 */}
-          <div className="flex justify-start space-x-4 w-full">
+          <div className="flex justify-start space-x-4 w-full mt-10">
             <button
                 onClick={handleSubmit}
-                className="py-1 px-4 bg-sky-500 text-white font-bold rounded-md w-80"
+                className="py-1 px-4 bg-sky-500 text-white font-bold rounded-md w-60"
             >
                 사이트 제작
             </button>
             <button
                 onClick={handleCancel}
-                className="py-1 px-4 border border-sky-500 text-gray-900 font-bold rounded-md w-80"
+                className="py-1 px-4 border border-sky-500 text-gray-900 font-bold rounded-md w-60"
             >
                 취소
             </button>
-            </div>
+          </div>
+          <p className="mt-2 text-gray-500 text-sm">임시저장은 불가능합니다.</p>
 
-        </div>
+
+          </div>
       </div>
     </div>
   );
