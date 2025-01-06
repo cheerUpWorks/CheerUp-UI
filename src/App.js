@@ -17,6 +17,7 @@ function App() {
         <Route path="/mainPage" element={<MainPage/>}/> 
         <Route path='/createCelebrationPage' element={<CreateCelebrationPage/>}/>
         <Route path='/showCelebratePage' element={<ShowCelebratePage/>}/>
+        <Route path="/celebrate" element={<ShowCelebratePage />} />
       </Routes>
     </Router>
   );

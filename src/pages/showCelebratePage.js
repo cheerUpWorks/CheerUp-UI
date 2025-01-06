@@ -15,7 +15,7 @@ const ShowCelebratePage = () => {
       <div className="overflow-x-hidden flex items-center justify-center min-h-screen">
         <div className="flex flex-col items-center justify-center px-6 py-6 w-full">
           {/* 축하받는 사람의 이름을 화면 중앙에 크게 표시 */}
-          <h1 className="text-5xl font-bold text-center mb-4">{name} 님</h1>
+          <h1 className="text-5xl font-bold text-center mb-4">{name}</h1>
 
           {/* 축하 메시지 */}
           <p className="text-2xl font-semibold text-center mb-6">{message || '생일 축하해요!'}</p>

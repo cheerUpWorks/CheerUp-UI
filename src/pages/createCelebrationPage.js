@@ -39,8 +39,27 @@ const CreateCelebrationPage = () => {
       alert('이름을 반드시 입력해야 합니다!');
       return;
     }
-  
-    // ShowCelebratePage로 이동하며 폼 데이터를 전달
+
+    // 새로운 축하 카드 데이터 생성
+    const newCelebration = {
+      username: name,
+      preview: message || '생일 축하해요!',
+      message: message || '생일 축하해요!',
+      additionalMessage,
+      imagePreviews,
+      createdAt: new Date().toISOString()
+    };
+
+    // localStorage에서 기존 데이터 가져오기
+    const existingCelebrations = JSON.parse(localStorage.getItem('celebrations') || '[]');
+    
+    // 새 데이터 추가
+    const updatedCelebrations = [...existingCelebrations, newCelebration];
+    
+    // localStorage에 저장
+    localStorage.setItem('celebrations', JSON.stringify(updatedCelebrations));
+
+    // ShowCelebratePage로 이동
     navigate('/showCelebratePage', {
       state: {
         name,

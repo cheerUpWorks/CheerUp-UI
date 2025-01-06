@@ -65,7 +65,8 @@ const SignUpPage = () => {
               className="w-full p-2 border border-gray-300 rounded-md bg-blue-100 text-gray-600"
             />
           </div>
-          <button className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+          <button className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          onClick={handleLoginRedirect}>
             회원가입
           </button>
         </div>

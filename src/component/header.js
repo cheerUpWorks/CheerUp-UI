@@ -17,9 +17,10 @@ const Header = ({ username, onLogout }) => {
   };
 
   const handleLogoutClick = () => {
-    // Call the onLogout function to clear the user session (e.g., remove user from state or localStorage)
-    onLogout();
-    navigate('/'); // Navigate to the home page or login page after logging out
+    if (onLogout) {
+      onLogout();
+    }
+    navigate('/');
   };
 
   return (

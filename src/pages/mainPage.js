@@ -11,23 +11,27 @@ const MainPage = () => {
 
   useEffect(() => {
     const fetchUsername = () => {
-      const dummyUsername = '홍길동'; // 예시로 '홍길동'을 사용
+      const dummyUsername = '이예흔'; // 예시로 '홍길동'을 사용
       setUsername(dummyUsername); // 더미 데이터를 상태로 저장
     };
 
     fetchUsername();
 
-    // 임시 데이터 (API 데이터로 대체 예정)
+    // localStorage에서 축하 카드 데이터 가져오기
     const fetchData = () => {
+      const storedCelebrations = JSON.parse(localStorage.getItem('celebrations') || '[]');
+      
+      // 기존 더미 데이터와 합치기 (선택사항)
       const mockData = [
-        { username: "OO", preview: "축하해요! 당신의 특별한 날을 기념합니다." },
-        { username: "JJ", preview: "행복한 축하의 메시지를 전합니다!" },
-        { username: "YY", preview: "오늘 당신의 기쁨을 함께 나누어요!" },
-        { username: "BB", preview: "소중한 순간을 함께 축하해요!" },
-        { username: "SS", preview: "새로운 시작을 축하합니다!" },
+        { username: "강은아", preview: "생일 너무 축하해!" },
+        { username: "설아 선배님", preview: "졸업추카 취업추카입니다 >.<" },
+        { username: "강호야", preview: "해사고 입학 축하해!" },
+        { username: "뽀삐뽀삐", preview: "생일 추카행~~" },
       ];
 
-      setCelebrations(mockData); 
+      // 저장된 데이터와 더미 데이터 합치기
+      const allCelebrations = [...storedCelebrations, ...mockData];
+      setCelebrations(allCelebrations);
     };
 
     fetchData();
@@ -39,14 +43,9 @@ const MainPage = () => {
 
   return (
     <div className='overflow-x-hidden'>
-      <header className="mb-4">
-        {/* Header 컴포넌트에 username을 prop으로 전달 */}
-        <Header username={username} />
-      </header>
+      <Header username={username} />
 
-      {/* 메인 컨텐츠 */}
-      <div className="flex flex-col items-start justify-center px-20 py-6 mt-20 w-full ml-6">
-        {/* 축하 기록 */}
+      <div className="flex flex-col items-start justify-center px-20 py-6 mt-8 w-full ml-6">
         <div className="flex items-center mb-6 w-full justify-start">
           <h2 className="text-xl font-semibold text-left mr-4">
             {`${username}님의 축하기록`}
@@ -59,18 +58,19 @@ const MainPage = () => {
           </button>
         </div>
 
-        {/* 자동 폐기 문구 */}
         <div className="mb-6 text-left w-full">
           <p className="text-sm text-gray-600">모든 웹사이트는 1달 후 자동 폐기됩니다.</p>
         </div>
 
-        {/* 카드 리스트 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-1 gap-y-5 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-5 w-full">
           {celebrations.map((celebration, index) => (
             <Card
               key={index}
               username={celebration.username}
               preview={celebration.preview}
+              message={celebration.message}
+              additionalMessage={celebration.additionalMessage}
+              imagePreviews={celebration.imagePreviews}
             />
           ))}
         </div>
