@@ -160,14 +160,14 @@ const CreateCelebrationPage = () => {
           <div className="flex justify-start space-x-4 w-full mt-10">
             <button
               onClick={handleSubmit}
-              className="py-1 px-4 bg-sky-500 text-white font-bold rounded-md w-60"
+              className="py-1 px-4 bg-blue-500 text-white font-bold rounded-md w-60"
               disabled={!name} // 이름이 없으면 버튼 비활성화
             >
               사이트 제작
             </button>
             <button
               onClick={handleCancel}
-              className="py-1 px-4 border border-sky-500 text-gray-900 font-bold rounded-md w-60"
+              className="py-1 px-4 border border-blue-500 text-gray-900 font-bold rounded-md w-60"
             >
               취소
             </button>
