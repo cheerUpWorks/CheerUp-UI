@@ -1,6 +1,12 @@
 import React from "react";
-
+import { useNavigate } from 'react-router-dom';
 const Header = ({ username }) => {
+const navigate = useNavigate();
+
+const handleStartClick = () => {
+    navigate('/mainPage'); 
+  };
+  
   return (
     <header className="flex justify-between items-center px-6 py-4">
       {/* 왼쪽 로고 */}
@@ -9,6 +15,7 @@ const Header = ({ username }) => {
           src="/logo.png"
           alt="Logo"
           className="mt-5 ml-14 h-8 w-auto"
+          onClick={handleStartClick}
         />
       </div>
 

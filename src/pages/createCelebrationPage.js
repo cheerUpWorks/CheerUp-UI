@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Header from '../component/header';
+import { useNavigate } from 'react-router-dom';
 
 const CreateCelebrationPage = () => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [additionalMessage, setAdditionalMessage] = useState('');
   const [imagePreviews, setImagePreviews] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -41,6 +44,7 @@ const CreateCelebrationPage = () => {
 
   const handleCancel = () => {
     console.log('사이트 생성이 취소되었습니다!');
+    navigate('/mainPage')
   };
 
   return (
@@ -65,7 +69,7 @@ const CreateCelebrationPage = () => {
               type="text"
               value={name}
               onChange={handleNameChange}
-              className="mt-2 mr-60 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96 ml-auto mr-4"
+              className="mt-2 mr-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96 ml-auto mr-4"
               placeholder="축하 대상자의 이름을 입력해주세요"
             />
           </div>
@@ -79,10 +83,10 @@ const CreateCelebrationPage = () => {
                 type="text"
                 value={message}
                 onChange={handleMessageChange}
-                className="mt-2 mr-60 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96 mr-4"
+                className="mt-2 mr-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96 mr-4"
                 placeholder="축하 문구를 입력해주세요"
               />
-              <p className="mt-2 mr-72 text-sm text-gray-500">
+              <p className="mt-2 mr-96 text-sm text-gray-500">
                 문구를 작성하지 않으면 '생일 축하해요!'로 자동 제작됩니다.
               </p>
             </div>
@@ -97,7 +101,7 @@ const CreateCelebrationPage = () => {
                 type="text"
                 value={additionalMessage}
                 onChange={handleAdditionalMessageChange}
-                className="mt-2 mr-60 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96 ml-auto mr-4"
+                className="mt-2 mr-80 p-2 bg-sky-100 text-gray-700 border border-gray-300 rounded-md w-96 ml-auto mr-4"
                 placeholder="추가 문구를 입력해주세요"
               />
             </div>

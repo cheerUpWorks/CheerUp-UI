@@ -6,7 +6,7 @@ const FirstPage = () => {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
-    navigate('/signUp'); // 클릭 시 /signUp 경로로 이동
+    navigate('/signUp'); 
   };
 
   return (
